@@ -28,7 +28,7 @@ wandb/
 *.safetensors
 
 # Generated models
-models/
+# models/
 saved_model/
 sft_model/
 
