@@ -1,0 +1,1532 @@
+WARNING:root:Warning: No .env file found in /home/ubuntu/meetmind_ai_agent_2
+Found existing trace file: traces/agent_traces_20260902_102738.csv (created 0.2 hours ago)
+
+Starting DPO Training Process
+Loading traces from traces/agent_traces_20260902_102738.csv...
+Created 66 preference pairs.
+Mean reward gap: 1.5
+Pairs with different YES/NO decisions: 66
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.17s/it]
+DPO preference pairs: 66
+DPO max_steps: 99 (~3.00 effective dataset passes)
+Extracting prompt in train dataset:   0%|          | 0/66 [00:00<?, ? examples/s]Extracting prompt in train dataset: 100%|██████████| 66/66 [00:00<00:00, 8590.88 examples/s]
+Applying chat template to train dataset:   0%|          | 0/66 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 66/66 [00:00<00:00, 10251.60 examples/s]
+Tokenizing train dataset:   0%|          | 0/66 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 66/66 [00:00<00:00, 813.43 examples/s]
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting DPO training...
+  0%|          | 0/99 [00:00<?, ?it/s]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+  1%|          | 1/99 [00:02<04:49,  2.96s/it]  2%|▏         | 2/99 [00:03<02:51,  1.77s/it]                                              {'loss': 0.6931, 'grad_norm': 7.423248291015625, 'learning_rate': 1e-06, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'logps/chosen': -201.91319274902344, 'logps/rejected': -211.87774658203125, 'logits/chosen': 1.7541956901550293, 'logits/rejected': 1.8638924360275269, 'epoch': 0.06}
+  2%|▏         | 2/99 [00:03<02:51,  1.77s/it]  3%|▎         | 3/99 [00:04<02:09,  1.35s/it]  4%|▍         | 4/99 [00:05<01:57,  1.24s/it]                                              {'loss': 0.6917, 'grad_norm': inf, 'learning_rate': 1.979381443298969e-06, 'rewards/chosen': -0.002775192027911544, 'rewards/rejected': -0.005860901437699795, 'rewards/accuracies': 0.75, 'rewards/margins': 0.0030857091769576073, 'logps/chosen': -200.48988342285156, 'logps/rejected': -199.73129272460938, 'logits/chosen': 1.7016161680221558, 'logits/rejected': 1.5947011709213257, 'epoch': 0.12}
+  4%|▍         | 4/99 [00:05<01:57,  1.24s/it]  5%|▌         | 5/99 [00:06<01:47,  1.14s/it]  6%|▌         | 6/99 [00:07<01:40,  1.08s/it]                                              {'loss': 0.6971, 'grad_norm': 7.812414646148682, 'learning_rate': 1.958762886597938e-06, 'rewards/chosen': -0.00426559429615736, 'rewards/rejected': 0.00368766812607646, 'rewards/accuracies': 0.0, 'rewards/margins': -0.007953261956572533, 'logps/chosen': -232.69683837890625, 'logps/rejected': -174.87060546875, 'logits/chosen': 1.8751492500305176, 'logits/rejected': 1.5424144268035889, 'epoch': 0.18}
+  6%|▌         | 6/99 [00:07<01:40,  1.08s/it]  7%|▋         | 7/99 [00:08<01:35,  1.03s/it]  8%|▊         | 8/99 [00:09<01:33,  1.03s/it]                                              {'loss': 0.6916, 'grad_norm': 5.7183918952941895, 'learning_rate': 1.9175257731958764e-06, 'rewards/chosen': 0.004642486572265625, 'rewards/rejected': 0.0016353607643395662, 'rewards/accuracies': 0.75, 'rewards/margins': 0.003007125575095415, 'logps/chosen': -182.9562530517578, 'logps/rejected': -197.4471893310547, 'logits/chosen': 1.7084567546844482, 'logits/rejected': 1.5587986707687378, 'epoch': 0.24}
+  8%|▊         | 8/99 [00:09<01:33,  1.03s/it]  9%|▉         | 9/99 [00:10<01:32,  1.03s/it] 10%|█         | 10/99 [00:11<01:29,  1.01s/it]                                               {'loss': 0.6911, 'grad_norm': 6.7525458335876465, 'learning_rate': 1.8762886597938143e-06, 'rewards/chosen': -0.00033035269007086754, 'rewards/rejected': -0.004452514927834272, 'rewards/accuracies': 0.75, 'rewards/margins': 0.004122162237763405, 'logps/chosen': -213.35409545898438, 'logps/rejected': -198.7083282470703, 'logits/chosen': 1.198771357536316, 'logits/rejected': 1.3101493120193481, 'epoch': 0.3}
+ 10%|█         | 10/99 [00:11<01:29,  1.01s/it]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 11%|█         | 11/99 [00:13<01:39,  1.13s/it] 12%|█▏        | 12/99 [00:14<01:34,  1.08s/it]                                               {'loss': 0.6886, 'grad_norm': 8.055769920349121, 'learning_rate': 1.8350515463917523e-06, 'rewards/chosen': 0.010355377569794655, 'rewards/rejected': 0.001160049345344305, 'rewards/accuracies': 0.75, 'rewards/margins': 0.009195328690111637, 'logps/chosen': -226.61395263671875, 'logps/rejected': -225.08612060546875, 'logits/chosen': 2.208376169204712, 'logits/rejected': 1.3856840133666992, 'epoch': 0.36}
+ 12%|█▏        | 12/99 [00:14<01:34,  1.08s/it] 13%|█▎        | 13/99 [00:15<01:30,  1.05s/it] 14%|█▍        | 14/99 [00:16<01:27,  1.03s/it]                                               {'loss': 0.6951, 'grad_norm': nan, 'learning_rate': 1.7938144329896908e-06, 'rewards/chosen': 0.007854270748794079, 'rewards/rejected': 0.0117034912109375, 'rewards/accuracies': 0.25, 'rewards/margins': -0.003849220694974065, 'logps/chosen': -176.64382934570312, 'logps/rejected': -254.67822265625, 'logits/chosen': 1.994091510772705, 'logits/rejected': 1.3902182579040527, 'epoch': 0.42}
+ 14%|█▍        | 14/99 [00:16<01:27,  1.03s/it] 15%|█▌        | 15/99 [00:17<01:25,  1.01s/it] 16%|█▌        | 16/99 [00:18<01:24,  1.02s/it]                                               {'loss': 0.6904, 'grad_norm': 8.941751480102539, 'learning_rate': 1.7731958762886596e-06, 'rewards/chosen': 0.008315278217196465, 'rewards/rejected': 0.00273742713034153, 'rewards/accuracies': 0.5, 'rewards/margins': 0.005577850621193647, 'logps/chosen': -256.95855712890625, 'logps/rejected': -244.70787048339844, 'logits/chosen': 1.8938496112823486, 'logits/rejected': 1.3103349208831787, 'epoch': 0.48}
+ 16%|█▌        | 16/99 [00:18<01:24,  1.02s/it] 17%|█▋        | 17/99 [00:18<01:21,  1.01it/s] 18%|█▊        | 18/99 [00:19<01:18,  1.03it/s]                                               {'loss': 0.6834, 'grad_norm': 7.097151279449463, 'learning_rate': 1.7319587628865979e-06, 'rewards/chosen': 0.01203765906393528, 'rewards/rejected': -0.007552337367087603, 'rewards/accuracies': 0.75, 'rewards/margins': 0.019589997828006744, 'logps/chosen': -225.37234497070312, 'logps/rejected': -241.67767333984375, 'logits/chosen': 1.734443187713623, 'logits/rejected': 1.8236738443374634, 'epoch': 0.55}
+ 18%|█▊        | 18/99 [00:19<01:18,  1.03it/s] 19%|█▉        | 19/99 [00:20<01:18,  1.02it/s] 20%|██        | 20/99 [00:21<01:18,  1.01it/s]                                               {'loss': 0.6889, 'grad_norm': 10.858538627624512, 'learning_rate': 1.690721649484536e-06, 'rewards/chosen': 0.008469009771943092, 'rewards/rejected': 8.39236963656731e-06, 'rewards/accuracies': 1.0, 'rewards/margins': 0.008460616692900658, 'logps/chosen': -221.46710205078125, 'logps/rejected': -232.96615600585938, 'logits/chosen': 1.50178062915802, 'logits/rejected': 0.9550865888595581, 'epoch': 0.61}
+ 20%|██        | 20/99 [00:21<01:18,  1.01it/s]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 21%|██        | 21/99 [00:23<01:27,  1.12s/it] 22%|██▏       | 22/99 [00:24<01:22,  1.07s/it]                                               {'loss': 0.6843, 'grad_norm': 6.822387218475342, 'learning_rate': 1.649484536082474e-06, 'rewards/chosen': 0.015572356060147285, 'rewards/rejected': -0.0022727965842932463, 'rewards/accuracies': 1.0, 'rewards/margins': 0.01784515380859375, 'logps/chosen': -191.43409729003906, 'logps/rejected': -225.53903198242188, 'logits/chosen': 1.9956848621368408, 'logits/rejected': 1.6221016645431519, 'epoch': 0.67}
+ 22%|██▏       | 22/99 [00:24<01:22,  1.07s/it] 23%|██▎       | 23/99 [00:25<01:18,  1.04s/it] 24%|██▍       | 24/99 [00:26<01:17,  1.03s/it]                                               {'loss': 0.6841, 'grad_norm': 9.079221725463867, 'learning_rate': 1.6082474226804124e-06, 'rewards/chosen': 0.01716308668255806, 'rewards/rejected': -0.000994873116724193, 'rewards/accuracies': 1.0, 'rewards/margins': 0.018157958984375, 'logps/chosen': -218.38076782226562, 'logps/rejected': -232.99322509765625, 'logits/chosen': 1.5368952751159668, 'logits/rejected': 1.5015748739242554, 'epoch': 0.73}
+ 24%|██▍       | 24/99 [00:26<01:17,  1.03s/it] 25%|██▌       | 25/99 [00:27<01:15,  1.02s/it] 26%|██▋       | 26/99 [00:28<01:13,  1.01s/it]                                               {'loss': 0.6791, 'grad_norm': nan, 'learning_rate': 1.5670103092783505e-06, 'rewards/chosen': 0.01685790903866291, 'rewards/rejected': -0.011568069458007812, 'rewards/accuracies': 1.0, 'rewards/margins': 0.028425980359315872, 'logps/chosen': -239.8251953125, 'logps/rejected': -245.09124755859375, 'logits/chosen': 1.933427095413208, 'logits/rejected': 1.343904733657837, 'epoch': 0.79}
+ 26%|██▋       | 26/99 [00:28<01:13,  1.01s/it] 27%|██▋       | 27/99 [00:29<01:11,  1.01it/s] 28%|██▊       | 28/99 [00:30<01:10,  1.01it/s]                                               {'loss': 0.6836, 'grad_norm': 6.988337993621826, 'learning_rate': 1.5463917525773195e-06, 'rewards/chosen': 0.011209487915039062, 'rewards/rejected': -0.007904816418886185, 'rewards/accuracies': 1.0, 'rewards/margins': 0.019114304333925247, 'logps/chosen': -189.720947265625, 'logps/rejected': -212.05062866210938, 'logits/chosen': 1.367365837097168, 'logits/rejected': 1.7527433633804321, 'epoch': 0.85}
+ 28%|██▊       | 28/99 [00:30<01:10,  1.01it/s] 29%|██▉       | 29/99 [00:31<01:10,  1.00s/it] 30%|███       | 30/99 [00:32<01:09,  1.01s/it]                                               {'loss': 0.6788, 'grad_norm': 8.964729309082031, 'learning_rate': 1.5051546391752576e-06, 'rewards/chosen': 0.023909758776426315, 'rewards/rejected': -0.004986191168427467, 'rewards/accuracies': 1.0, 'rewards/margins': 0.028895951807498932, 'logps/chosen': -295.673095703125, 'logps/rejected': -216.69357299804688, 'logits/chosen': 1.2658709287643433, 'logits/rejected': 1.4706149101257324, 'epoch': 0.91}
+ 30%|███       | 30/99 [00:32<01:09,  1.01s/it]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 31%|███▏      | 31/99 [00:33<01:15,  1.11s/it] 32%|███▏      | 32/99 [00:34<01:10,  1.06s/it]                                               {'loss': 0.6817, 'grad_norm': 7.84930419921875, 'learning_rate': 1.4639175257731956e-06, 'rewards/chosen': 0.015452575869858265, 'rewards/rejected': -0.007513809949159622, 'rewards/accuracies': 1.0, 'rewards/margins': 0.02296638675034046, 'logps/chosen': -213.300537109375, 'logps/rejected': -204.9319305419922, 'logits/chosen': 1.5959068536758423, 'logits/rejected': 1.5275850296020508, 'epoch': 0.97}
+ 32%|███▏      | 32/99 [00:34<01:10,  1.06s/it] 33%|███▎      | 33/99 [00:35<01:09,  1.05s/it] 34%|███▍      | 34/99 [00:36<01:06,  1.03s/it]                                               {'loss': 0.6778, 'grad_norm': 7.116722106933594, 'learning_rate': 1.422680412371134e-06, 'rewards/chosen': 0.018468856811523438, 'rewards/rejected': -0.012551880441606045, 'rewards/accuracies': 1.0, 'rewards/margins': 0.031020736321806908, 'logps/chosen': -231.99688720703125, 'logps/rejected': -250.10208129882812, 'logits/chosen': 1.6695375442504883, 'logits/rejected': 1.6119362115859985, 'epoch': 1.03}
+ 34%|███▍      | 34/99 [00:36<01:06,  1.03s/it] 35%|███▌      | 35/99 [00:37<01:04,  1.00s/it] 36%|███▋      | 36/99 [00:38<01:02,  1.00it/s]                                               {'loss': 0.6781, 'grad_norm': 8.1171236038208, 'learning_rate': 1.3814432989690721e-06, 'rewards/chosen': 0.018688201904296875, 'rewards/rejected': -0.011607361026108265, 'rewards/accuracies': 1.0, 'rewards/margins': 0.030295563861727715, 'logps/chosen': -230.87344360351562, 'logps/rejected': -187.70263671875, 'logits/chosen': 1.6657636165618896, 'logits/rejected': 1.3742679357528687, 'epoch': 1.09}
+ 36%|███▋      | 36/99 [00:38<01:02,  1.00it/s] 37%|███▋      | 37/99 [00:39<01:00,  1.02it/s] 38%|███▊      | 38/99 [00:40<01:00,  1.00it/s]                                               {'loss': 0.6806, 'grad_norm': 9.402503967285156, 'learning_rate': 1.3402061855670102e-06, 'rewards/chosen': 0.017799759283661842, 'rewards/rejected': -0.007471466436982155, 'rewards/accuracies': 1.0, 'rewards/margins': 0.025271225720643997, 'logps/chosen': -179.75503540039062, 'logps/rejected': -239.03233337402344, 'logits/chosen': 1.939038634300232, 'logits/rejected': 1.6838102340698242, 'epoch': 1.15}
+ 38%|███▊      | 38/99 [00:40<01:00,  1.00it/s] 39%|███▉      | 39/99 [00:41<01:01,  1.02s/it] 40%|████      | 40/99 [00:42<00:59,  1.01s/it]                                               {'loss': 0.6655, 'grad_norm': nan, 'learning_rate': 1.2989690721649485e-06, 'rewards/chosen': 0.020080184563994408, 'rewards/rejected': -0.03626899793744087, 'rewards/accuracies': 1.0, 'rewards/margins': 0.05634918436408043, 'logps/chosen': -259.32647705078125, 'logps/rejected': -270.7390441894531, 'logits/chosen': 1.6726281642913818, 'logits/rejected': 1.2694982290267944, 'epoch': 1.21}
+ 40%|████      | 40/99 [00:42<00:59,  1.01s/it]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 41%|████▏     | 41/99 [00:43<01:04,  1.11s/it] 42%|████▏     | 42/99 [00:44<01:00,  1.06s/it]                                               {'loss': 0.6687, 'grad_norm': 6.9153876304626465, 'learning_rate': 1.2783505154639173e-06, 'rewards/chosen': 0.026972198858857155, 'rewards/rejected': -0.02247161976993084, 'rewards/accuracies': 1.0, 'rewards/margins': 0.049443818628787994, 'logps/chosen': -237.5498504638672, 'logps/rejected': -197.6136932373047, 'logits/chosen': 1.9140217304229736, 'logits/rejected': 1.392287015914917, 'epoch': 1.27}
+ 42%|████▏     | 42/99 [00:44<01:00,  1.06s/it] 43%|████▎     | 43/99 [00:45<00:57,  1.03s/it] 44%|████▍     | 44/99 [00:46<00:55,  1.01s/it]                                               {'loss': 0.6738, 'grad_norm': 6.454760551452637, 'learning_rate': 1.2371134020618557e-06, 'rewards/chosen': 0.022614289075136185, 'rewards/rejected': -0.01640777662396431, 'rewards/accuracies': 1.0, 'rewards/margins': 0.039022065699100494, 'logps/chosen': -196.80419921875, 'logps/rejected': -220.84068298339844, 'logits/chosen': 1.6479967832565308, 'logits/rejected': 1.5146574974060059, 'epoch': 1.33}
+ 44%|████▍     | 44/99 [00:46<00:55,  1.01s/it] 45%|████▌     | 45/99 [00:47<00:54,  1.02s/it] 46%|████▋     | 46/99 [00:48<00:53,  1.02s/it]                                               {'loss': 0.6734, 'grad_norm': 8.322807312011719, 'learning_rate': 1.1958762886597938e-06, 'rewards/chosen': 0.026489639654755592, 'rewards/rejected': -0.013318252749741077, 'rewards/accuracies': 1.0, 'rewards/margins': 0.039807893335819244, 'logps/chosen': -210.55245971679688, 'logps/rejected': -241.51751708984375, 'logits/chosen': 1.6958059072494507, 'logits/rejected': 1.3726248741149902, 'epoch': 1.39}
+ 46%|████▋     | 46/99 [00:48<00:53,  1.02s/it] 47%|████▋     | 47/99 [00:49<00:52,  1.01s/it] 48%|████▊     | 48/99 [00:50<00:50,  1.02it/s]                                               {'loss': 0.6726, 'grad_norm': 6.624631881713867, 'learning_rate': 1.1546391752577318e-06, 'rewards/chosen': 0.02938537672162056, 'rewards/rejected': -0.012096405029296875, 'rewards/accuracies': 1.0, 'rewards/margins': 0.041481781750917435, 'logps/chosen': -243.18209838867188, 'logps/rejected': -206.37142944335938, 'logits/chosen': 1.4546761512756348, 'logits/rejected': 1.8428980112075806, 'epoch': 1.45}
+ 48%|████▊     | 48/99 [00:50<00:50,  1.02it/s] 49%|████▉     | 49/99 [00:51<00:48,  1.04it/s] 51%|█████     | 50/99 [00:52<00:48,  1.01it/s]                                               {'loss': 0.6739, 'grad_norm': 7.949682712554932, 'learning_rate': 1.11340206185567e-06, 'rewards/chosen': 0.03117084689438343, 'rewards/rejected': -0.007728958502411842, 'rewards/accuracies': 1.0, 'rewards/margins': 0.038899801671504974, 'logps/chosen': -238.22314453125, 'logps/rejected': -187.9156036376953, 'logits/chosen': 1.5782026052474976, 'logits/rejected': 1.6917256116867065, 'epoch': 1.52}
+ 51%|█████     | 50/99 [00:52<00:48,  1.01it/s]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 52%|█████▏    | 51/99 [00:54<00:54,  1.13s/it] 53%|█████▎    | 52/99 [00:55<00:50,  1.08s/it]                                               {'loss': 0.6677, 'grad_norm': 6.114470958709717, 'learning_rate': 1.0721649484536082e-06, 'rewards/chosen': 0.026884842664003372, 'rewards/rejected': -0.02467498928308487, 'rewards/accuracies': 1.0, 'rewards/margins': 0.05155982822179794, 'logps/chosen': -226.69036865234375, 'logps/rejected': -219.30935668945312, 'logits/chosen': 1.7175731658935547, 'logits/rejected': 1.5170823335647583, 'epoch': 1.58}
+ 53%|█████▎    | 52/99 [00:55<00:50,  1.08s/it] 54%|█████▎    | 53/99 [00:56<00:48,  1.06s/it] 55%|█████▍    | 54/99 [00:57<00:46,  1.03s/it]                                               {'loss': 0.6722, 'grad_norm': 8.810073852539062, 'learning_rate': 1.0309278350515462e-06, 'rewards/chosen': 0.02698364295065403, 'rewards/rejected': -0.015431975945830345, 'rewards/accuracies': 1.0, 'rewards/margins': 0.042415618896484375, 'logps/chosen': -194.81405639648438, 'logps/rejected': -252.55068969726562, 'logits/chosen': 1.9138951301574707, 'logits/rejected': 1.2778609991073608, 'epoch': 1.64}
+ 55%|█████▍    | 54/99 [00:57<00:46,  1.03s/it] 56%|█████▌    | 55/99 [00:58<00:44,  1.01s/it] 57%|█████▋    | 56/99 [00:58<00:42,  1.00it/s]                                               {'loss': 0.661, 'grad_norm': 7.575582504272461, 'learning_rate': 9.896907216494845e-07, 'rewards/chosen': 0.04446297138929367, 'rewards/rejected': -0.020941926166415215, 'rewards/accuracies': 1.0, 'rewards/margins': 0.06540489196777344, 'logps/chosen': -209.73007202148438, 'logps/rejected': -173.06130981445312, 'logits/chosen': 1.8871269226074219, 'logits/rejected': 1.54006826877594, 'epoch': 1.7}
+ 57%|█████▋    | 56/99 [00:58<00:42,  1.00it/s] 58%|█████▊    | 57/99 [00:59<00:42,  1.00s/it] 59%|█████▊    | 58/99 [01:00<00:40,  1.00it/s]                                               {'loss': 0.6696, 'grad_norm': 6.612874984741211, 'learning_rate': 9.484536082474226e-07, 'rewards/chosen': 0.027399824932217598, 'rewards/rejected': -0.020174408331513405, 'rewards/accuracies': 1.0, 'rewards/margins': 0.047574233263731, 'logps/chosen': -210.68020629882812, 'logps/rejected': -230.77383422851562, 'logits/chosen': 1.6837875843048096, 'logits/rejected': 1.4584176540374756, 'epoch': 1.76}
+ 59%|█████▊    | 58/99 [01:00<00:40,  1.00it/s] 60%|█████▉    | 59/99 [01:01<00:39,  1.00it/s] 61%|██████    | 60/99 [01:02<00:38,  1.02it/s]                                               {'loss': 0.6509, 'grad_norm': 9.094423294067383, 'learning_rate': 9.072164948453608e-07, 'rewards/chosen': 0.0388309471309185, 'rewards/rejected': -0.047576144337654114, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08640709519386292, 'logps/chosen': -186.14772033691406, 'logps/rejected': -276.83441162109375, 'logits/chosen': 1.9779067039489746, 'logits/rejected': 1.7075302600860596, 'epoch': 1.82}
+ 61%|██████    | 60/99 [01:02<00:38,  1.02it/s]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 62%|██████▏   | 61/99 [01:04<00:42,  1.11s/it] 63%|██████▎   | 62/99 [01:05<00:39,  1.07s/it]                                               {'loss': 0.6599, 'grad_norm': 7.436996936798096, 'learning_rate': 8.659793814432989e-07, 'rewards/chosen': 0.044968415051698685, 'rewards/rejected': -0.02275848388671875, 'rewards/accuracies': 1.0, 'rewards/margins': 0.06772689521312714, 'logps/chosen': -214.49932861328125, 'logps/rejected': -219.3436737060547, 'logits/chosen': 1.3165767192840576, 'logits/rejected': 1.6916767358779907, 'epoch': 1.88}
+ 63%|██████▎   | 62/99 [01:05<00:39,  1.07s/it] 64%|██████▎   | 63/99 [01:06<00:37,  1.04s/it] 65%|██████▍   | 64/99 [01:07<00:35,  1.03s/it]                                               {'loss': 0.6601, 'grad_norm': 5.919195175170898, 'learning_rate': 8.24742268041237e-07, 'rewards/chosen': 0.043793871998786926, 'rewards/rejected': -0.023448945954442024, 'rewards/accuracies': 1.0, 'rewards/margins': 0.0672428160905838, 'logps/chosen': -215.80218505859375, 'logps/rejected': -218.7662353515625, 'logits/chosen': 2.106539726257324, 'logits/rejected': 1.4363077878952026, 'epoch': 1.94}
+ 65%|██████▍   | 64/99 [01:07<00:35,  1.03s/it] 66%|██████▌   | 65/99 [01:08<00:35,  1.05s/it] 67%|██████▋   | 66/99 [01:09<00:34,  1.04s/it]                                               {'loss': 0.6644, 'grad_norm': 7.65991735458374, 'learning_rate': 7.835051546391752e-07, 'rewards/chosen': 0.03855438157916069, 'rewards/rejected': -0.01998748816549778, 'rewards/accuracies': 1.0, 'rewards/margins': 0.05854187160730362, 'logps/chosen': -244.634521484375, 'logps/rejected': -212.7954559326172, 'logits/chosen': 1.1979517936706543, 'logits/rejected': 1.2865450382232666, 'epoch': 2.0}
+ 67%|██████▋   | 66/99 [01:09<00:34,  1.04s/it] 68%|██████▊   | 67/99 [01:10<00:33,  1.04s/it] 69%|██████▊   | 68/99 [01:11<00:31,  1.03s/it]                                               {'loss': 0.6633, 'grad_norm': 8.511350631713867, 'learning_rate': 7.422680412371134e-07, 'rewards/chosen': 0.04526710510253906, 'rewards/rejected': -0.015293503180146217, 'rewards/accuracies': 1.0, 'rewards/margins': 0.06056061014533043, 'logps/chosen': -205.93975830078125, 'logps/rejected': -220.671630859375, 'logits/chosen': 1.2136108875274658, 'logits/rejected': 1.409568190574646, 'epoch': 2.06}
+ 69%|██████▊   | 68/99 [01:11<00:31,  1.03s/it] 70%|██████▉   | 69/99 [01:12<00:30,  1.01s/it] 71%|███████   | 70/99 [01:13<00:29,  1.02s/it]                                               {'loss': 0.6552, 'grad_norm': 10.099645614624023, 'learning_rate': 7.010309278350515e-07, 'rewards/chosen': 0.044983673840761185, 'rewards/rejected': -0.03246116638183594, 'rewards/accuracies': 1.0, 'rewards/margins': 0.07744483649730682, 'logps/chosen': -241.13674926757812, 'logps/rejected': -236.55361938476562, 'logits/chosen': 1.6010547876358032, 'logits/rejected': 1.2614368200302124, 'epoch': 2.12}
+ 71%|███████   | 70/99 [01:13<00:29,  1.02s/it]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 72%|███████▏  | 71/99 [01:14<00:31,  1.11s/it] 73%|███████▎  | 72/99 [01:15<00:29,  1.08s/it]                                               {'loss': 0.6614, 'grad_norm': 6.848887920379639, 'learning_rate': 6.597938144329896e-07, 'rewards/chosen': 0.04594078287482262, 'rewards/rejected': -0.018574142828583717, 'rewards/accuracies': 1.0, 'rewards/margins': 0.06451492756605148, 'logps/chosen': -204.78338623046875, 'logps/rejected': -169.23837280273438, 'logits/chosen': 1.863564372062683, 'logits/rejected': 1.5596693754196167, 'epoch': 2.18}
+ 73%|███████▎  | 72/99 [01:15<00:29,  1.08s/it] 74%|███████▎  | 73/99 [01:16<00:27,  1.05s/it] 75%|███████▍  | 74/99 [01:17<00:25,  1.02s/it]                                               {'loss': 0.6528, 'grad_norm': 6.8060994148254395, 'learning_rate': 6.185567010309279e-07, 'rewards/chosen': 0.03772697597742081, 'rewards/rejected': -0.04474449157714844, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08247146755456924, 'logps/chosen': -202.99851989746094, 'logps/rejected': -219.83775329589844, 'logits/chosen': 1.5812054872512817, 'logits/rejected': 1.680696725845337, 'epoch': 2.24}
+ 75%|███████▍  | 74/99 [01:17<00:25,  1.02s/it] 76%|███████▌  | 75/99 [01:18<00:24,  1.00s/it] 77%|███████▋  | 76/99 [01:19<00:23,  1.01s/it]                                               {'loss': 0.6554, 'grad_norm': 7.698823928833008, 'learning_rate': 5.773195876288659e-07, 'rewards/chosen': 0.05208625644445419, 'rewards/rejected': -0.024806976318359375, 'rewards/accuracies': 1.0, 'rewards/margins': 0.07689324021339417, 'logps/chosen': -232.13333129882812, 'logps/rejected': -220.5747833251953, 'logits/chosen': 1.867433786392212, 'logits/rejected': 1.7751359939575195, 'epoch': 2.3}
+ 77%|███████▋  | 76/99 [01:19<00:23,  1.01s/it] 78%|███████▊  | 77/99 [01:20<00:22,  1.03s/it] 79%|███████▉  | 78/99 [01:21<00:21,  1.01s/it]                                               {'loss': 0.6557, 'grad_norm': 8.801708221435547, 'learning_rate': 5.360824742268041e-07, 'rewards/chosen': 0.04187660291790962, 'rewards/rejected': -0.03464813157916069, 'rewards/accuracies': 1.0, 'rewards/margins': 0.07652473449707031, 'logps/chosen': -238.45230102539062, 'logps/rejected': -246.21246337890625, 'logits/chosen': 1.5060979127883911, 'logits/rejected': 1.3248357772827148, 'epoch': 2.36}
+ 79%|███████▉  | 78/99 [01:21<00:21,  1.01s/it] 80%|███████▉  | 79/99 [01:22<00:19,  1.00it/s] 81%|████████  | 80/99 [01:23<00:18,  1.01it/s]                                               {'loss': 0.652, 'grad_norm': 6.749422550201416, 'learning_rate': 4.948453608247422e-07, 'rewards/chosen': 0.0543392188847065, 'rewards/rejected': -0.02974853664636612, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08408775180578232, 'logps/chosen': -222.58091735839844, 'logps/rejected': -259.6075744628906, 'logits/chosen': 1.615380883216858, 'logits/rejected': 1.7436492443084717, 'epoch': 2.42}
+ 81%|████████  | 80/99 [01:23<00:18,  1.01it/s]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 82%|████████▏ | 81/99 [01:24<00:19,  1.09s/it] 83%|████████▎ | 82/99 [01:25<00:17,  1.06s/it]                                               {'loss': 0.6509, 'grad_norm': 6.29813814163208, 'learning_rate': 4.536082474226804e-07, 'rewards/chosen': 0.0534246452152729, 'rewards/rejected': -0.03309516981244087, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08651981502771378, 'logps/chosen': -200.06764221191406, 'logps/rejected': -209.21914672851562, 'logits/chosen': 2.2247023582458496, 'logits/rejected': 1.3506293296813965, 'epoch': 2.48}
+ 83%|████████▎ | 82/99 [01:25<00:17,  1.06s/it] 84%|████████▍ | 83/99 [01:27<00:16,  1.06s/it] 85%|████████▍ | 84/99 [01:28<00:15,  1.03s/it]                                               {'loss': 0.6478, 'grad_norm': 7.261139869689941, 'learning_rate': 4.123711340206185e-07, 'rewards/chosen': 0.04887848347425461, 'rewards/rejected': -0.04393806681036949, 'rewards/accuracies': 1.0, 'rewards/margins': 0.0928165391087532, 'logps/chosen': -229.8445587158203, 'logps/rejected': -256.4930419921875, 'logits/chosen': 2.0833356380462646, 'logits/rejected': 1.3211910724639893, 'epoch': 2.55}
+ 85%|████████▍ | 84/99 [01:28<00:15,  1.03s/it] 86%|████████▌ | 85/99 [01:29<00:14,  1.03s/it] 87%|████████▋ | 86/99 [01:30<00:13,  1.03s/it]                                               {'loss': 0.647, 'grad_norm': 11.242056846618652, 'learning_rate': 3.711340206185567e-07, 'rewards/chosen': 0.045337483286857605, 'rewards/rejected': -0.04933548346161842, 'rewards/accuracies': 1.0, 'rewards/margins': 0.09467297792434692, 'logps/chosen': -214.8981170654297, 'logps/rejected': -271.1231689453125, 'logits/chosen': 1.7762413024902344, 'logits/rejected': 1.6657384634017944, 'epoch': 2.61}
+ 87%|████████▋ | 86/99 [01:30<00:13,  1.03s/it] 88%|████████▊ | 87/99 [01:31<00:12,  1.03s/it] 89%|████████▉ | 88/99 [01:32<00:11,  1.01s/it]                                               {'loss': 0.651, 'grad_norm': 6.320260524749756, 'learning_rate': 3.298969072164948e-07, 'rewards/chosen': 0.04557228088378906, 'rewards/rejected': -0.04065437242388725, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08622665703296661, 'logps/chosen': -225.0900421142578, 'logps/rejected': -206.33932495117188, 'logits/chosen': 1.4732263088226318, 'logits/rejected': 1.3097281455993652, 'epoch': 2.67}
+ 89%|████████▉ | 88/99 [01:32<00:11,  1.01s/it] 90%|████████▉ | 89/99 [01:33<00:10,  1.01s/it] 91%|█████████ | 90/99 [01:34<00:09,  1.02s/it]                                               {'loss': 0.6514, 'grad_norm': 7.609193801879883, 'learning_rate': 2.8865979381443296e-07, 'rewards/chosen': 0.0535251647233963, 'rewards/rejected': -0.03182182461023331, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08534698188304901, 'logps/chosen': -234.85189819335938, 'logps/rejected': -239.3738555908203, 'logits/chosen': 2.0946907997131348, 'logits/rejected': 1.4293880462646484, 'epoch': 2.73}
+ 91%|█████████ | 90/99 [01:34<00:09,  1.02s/it]/home/ubuntu/miniconda3/envs/meetmind_ai_agent/lib/python3.11/site-packages/torch/utils/checkpoint.py:238: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+ 92%|█████████▏| 91/99 [01:35<00:08,  1.12s/it] 93%|█████████▎| 92/99 [01:36<00:07,  1.09s/it]                                               {'loss': 0.6463, 'grad_norm': 9.79279899597168, 'learning_rate': 2.474226804123711e-07, 'rewards/chosen': 0.054056547582149506, 'rewards/rejected': -0.04187889024615288, 'rewards/accuracies': 1.0, 'rewards/margins': 0.09593544900417328, 'logps/chosen': -228.68914794921875, 'logps/rejected': -214.43698120117188, 'logits/chosen': 1.6771063804626465, 'logits/rejected': 1.5561224222183228, 'epoch': 2.79}
+ 93%|█████████▎| 92/99 [01:36<00:07,  1.09s/it] 94%|█████████▍| 93/99 [01:37<00:06,  1.05s/it] 95%|█████████▍| 94/99 [01:38<00:05,  1.03s/it]                                               {'loss': 0.6532, 'grad_norm': 6.81181001663208, 'learning_rate': 2.0618556701030925e-07, 'rewards/chosen': 0.049565888941287994, 'rewards/rejected': -0.032141875475645065, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08170776814222336, 'logps/chosen': -176.4886474609375, 'logps/rejected': -199.092529296875, 'logits/chosen': 1.3721764087677002, 'logits/rejected': 1.7773410081863403, 'epoch': 2.85}
+ 95%|█████████▍| 94/99 [01:38<00:05,  1.03s/it] 96%|█████████▌| 95/99 [01:39<00:04,  1.01s/it] 97%|█████████▋| 96/99 [01:40<00:02,  1.00it/s]                                               {'loss': 0.6479, 'grad_norm': 5.826560020446777, 'learning_rate': 1.649484536082474e-07, 'rewards/chosen': 0.04351615905761719, 'rewards/rejected': -0.049246594309806824, 'rewards/accuracies': 1.0, 'rewards/margins': 0.09276276081800461, 'logps/chosen': -183.0048828125, 'logps/rejected': -196.0294189453125, 'logits/chosen': 1.9330368041992188, 'logits/rejected': 1.4971204996109009, 'epoch': 2.91}
+ 97%|█████████▋| 96/99 [01:40<00:02,  1.00it/s] 98%|█████████▊| 97/99 [01:41<00:01,  1.01it/s] 99%|█████████▉| 98/99 [01:42<00:00,  1.00it/s]                                               {'loss': 0.6504, 'grad_norm': 7.127813339233398, 'learning_rate': 1.2371134020618556e-07, 'rewards/chosen': 0.053025439381599426, 'rewards/rejected': -0.03441352769732475, 'rewards/accuracies': 1.0, 'rewards/margins': 0.08743897080421448, 'logps/chosen': -228.02615356445312, 'logps/rejected': -202.4757537841797, 'logits/chosen': 1.287697672843933, 'logits/rejected': 1.446225881576538, 'epoch': 2.97}
+ 99%|█████████▉| 98/99 [01:42<00:00,  1.00it/s]100%|██████████| 99/99 [01:43<00:00,  1.01s/it]                                               {'train_runtime': 103.7775, 'train_samples_per_second': 1.908, 'train_steps_per_second': 0.954, 'train_loss': 0.6694905812090094, 'epoch': 3.0}
+100%|██████████| 99/99 [01:43<00:00,  1.01s/it]100%|██████████| 99/99 [01:43<00:00,  1.05s/it]
+DPO training complete.
+Saving new LoRA adapter to './qwen3-dpo-adapter-v1'...
+Adapter saved successfully.
+
+============================================================
+EVALUATION PHASE
+============================================================
+Collected NO: YES=0/2, NO=1/2 (attempt 1)
+Collected NO: YES=0/2, NO=2/2 (attempt 2)
+Collected YES: YES=1/2, NO=2/2 (attempt 127)
+Collected YES: YES=2/2, NO=2/2 (attempt 598)
+Balanced evaluation set created after 598 attempts: {'YES': 2, 'NO': 2}
+
+Running Full Local Evaluation for BASELINE Model
+
+Loading evaluation base model ONCE: Qwen/Qwen3-1.7B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.06it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  2.10it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.83it/s]
+Scenario 0_p0 (baseline, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.5s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.0s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.4s
+Yes
+
+{
+  "recommendation": "YES",
+  "reasoning": "The analysis shows a high compatibility score for common interests and topics, a fit for the time slot, and moderate follow-up potential. The shared professional context and high energy levels suggest a productive meeting. The neutral moods and focus indicate a balanced approach, which is conducive to meaningful discussions. The suggested next steps further support the meeting's value."
+}<|im_end|>
+Scenario 0_p0 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p0 (baseline, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.6s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 18.3s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.3s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.2s
+{"recommendation": "YES", "reasoning": "The analysis shows a high compatibility score for common interests and topics (0.75), the time slot aligns well with both individuals' energy levels (fit score 0.8), and there is a 60% likelihood of productive follow-up interactions. While relationship potential is low, business potential is medium, and the technical context aligns well. The overall scenario suggests a productive and balanced meeting with potential for further collaboration."}<|im_end|>
+Scenario 2_p0 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p0 (baseline, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.9s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.5s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.3s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.5s
+{"recommendation": "YES", "reasoning": "The meeting is suitable given the shared time slot and professional context. The compatibility score is 0.75, and the follow-up potential is 0.3, indicating a moderate chance of further interaction. The time slot is fit for both individuals, with their energy levels aligning. The red flags are minor and can be managed with suggested next steps."}<|im_end|>
+Scenario 1_p0 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p0 (baseline, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.2s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 11.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.3s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.3s
+ased on shared interests in work habits, technical problem-solving, and independent task completion. The time slot is energetically aligned, and while follow-up potential is low, the meeting is still valuable for professional development. The introverted nature of both individuals suggests a focus on independent work, which is consistent with their professional roles. The compatibility score and time slot fit indicate a productive meeting, and the suggested next steps are reasonable."}<|im_end|>
+Scenario 3_p0 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p1 (baseline, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.9s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 19.5s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.8s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.4s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in work-related interests, a suitable time slot, and moderate follow-up potential. The shared focus on work efficiency and career development, along with the senior's experience and the junior's energy, suggests a productive meeting. The moderate follow-up potential indicates that the meeting could lead to meaningful discussions, making it a high-confidence decision to proceed."}<|im_end|>
+Scenario 0_p1 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p1 (baseline, Vigil)
+
+Iteration 0: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is intensely focused, working on a complex technical problem with high energy, their introverted nature evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.
+Person B: The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.
+Time: Day2 Morning
+SFT RESULT: {'reason': 'collaboration', 'probability': 0.7}
+==========================================
+
+Iteration 0: agent returned after 14.0s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 11.2s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 16.8s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 12.8s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.7s
+Yes
+
+{
+  "recommendation": "YES",
+  "reasoning": "The analysis shows a high probability of meeting success (0.7), moderate compatibility in interests and work preferences, and a reasonable follow-up potential (0.6). The time slot is suitable, and there are no significant red flags. The collaboration and shared goals suggest a productive meeting, making the recommendation to proceed with the meeting."
+}<|im_end|>
+Scenario 2_p1 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p1 (baseline, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.8s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 18.9s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.0s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.9s
+actions. The shared interests in strategic planning and industry trends provide a foundation for meaningful discussion. While the follow-up potential is low, the meeting can still be productive for exchanging insights. The neutral moods and lack of urgency suggest that the meeting is not urgent, but it can still be scheduled for informational purposes. The meeting is recommended as it provides an opportunity for both individuals to engage in meaningful conversation without pressure."
+}<|im_end|>
+Scenario 1_p1 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p1 (baseline, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.3s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.5s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.9s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.6s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in technical interests and work focus, moderate energy levels, and a low relationship potential but medium business potential. The meeting is well-suited for productive discussion, and the follow-up potential is moderate, suggesting a reasonable chance of productive interaction. The time slot is not ideal for fatigue but is acceptable for focused work. The final decision is to recommend the meeting."}<|im_end|>
+Scenario 3_p1 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p2 (baseline, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.0s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 12.5s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The VC Partner is highly energetic, focused, and efficiently managing their time with minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.
+Person B: The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.
+Time: Day3 Evening
+SFT RESULT: {'reason': 'underperformance', 'probability': 0.23}
+==========================================
+
+Iteration 2: agent returned after 7.6s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.7s
+</think>
+
+{"recommendation": "NO", "reasoning": "The prediction from the `predict_meeting_success_tool` indicates a probability of 0.23, which is below the 0.50 threshold for recommending a meeting. This suggests that the meeting is unlikely to be successful, and thus, it is not recommended."}<|im_end|>
+Scenario 0_p2 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 2_p2 (baseline, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.7s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 16.5s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is intensely focused, working on a complex technical problem with high energy, their introverted nature evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.
+Person B: The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.
+Time: Day2 Morning
+SFT RESULT: {'reason': 'collaboration', 'probability': 0.7}
+==========================================
+
+Iteration 2: agent returned after 8.5s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.6s
+{"recommendation": "YES", "reasoning": "The analysis shows a high probability of success (0.7) due to shared technical interests, compatible energy levels, and a suitable time slot. The collaboration score indicates a positive potential for productive interaction, making the meeting a good opportunity for networking and professional growth."}<|im_end|>
+Scenario 2_p2 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p2 (baseline, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.9s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 18.0s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The attendee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.
+Person B: The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.
+Time: Day3 Afternoon
+SFT RESULT: {'reason': 'productivity', 'probability': 0.72}
+==========================================
+
+Iteration 2: agent returned after 7.2s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 9.8s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 5.5s
+{"recommendation": "YES", "reasoning": "The meeting has been evaluated using multiple tools. The compatibility score is 0.75, the time slot fit is 0.8, and the meeting success probability is 0.72. While there are red flags such as the time slot being too quiet for Person A, the overall potential for productive interaction is high. The follow-up potential is low, but the meeting itself is still recommended due to the shared interests and the moderate compatibility score."}<|im_end|>
+Scenario 1_p2 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p2 (baseline, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.2s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 11.4s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.
+Person B: The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.
+Time: Day1 Afternoon
+SFT RESULT: {'reason': 'disconnection', 'probability': 0.23}
+==========================================
+
+Iteration 2: agent returned after 6.9s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 11.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.4s
+{"recommendation": "YES", "reasoning": "The analysis shows a moderate compatibility score (0.6), suitable time slot (fit score 0.8), and potential for brief, project-related discussions. While the meeting success probability is low (0.23), the potential for structured collaboration and shared interests in technical work outweighs the risks. The low relationship potential suggests a cautious but feasible meeting."}<|im_end|>
+Scenario 3_p2 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p3 (baseline, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.6s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.5s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.7s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The VC Partner is highly energetic, focused, and efficiently managing their time with minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.
+Person B: The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.
+Time: Day3 Evening
+SFT RESULT: {'reason': 'underperformance', 'probability': 0.23}
+==========================================
+
+Iteration 3: agent returned after 7.6s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.1s
+{"recommendation": "NO", "reasoning": "The prediction tool indicates a 23% probability of success, which is below the 50% threshold. The analysis shows that while there are shared interests and a suitable time slot, the potential for a productive meeting is low due to differing priorities and lack of social engagement. Therefore, the meeting is not recommended."}<|im_end|>
+Scenario 0_p3 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 2_p3 (baseline, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.8s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.9s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is intensely focused, working on a complex technical problem with high energy, their introverted nature evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.
+Person B: The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.
+Time: Day2 Morning
+SFT RESULT: {'reason': 'collaboration', 'probability': 0.7}
+==========================================
+
+Iteration 2: agent returned after 8.6s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 12.7s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.9s
+Yes, I am finished. 
+
+{
+  "recommendation": "YES",
+  "reasoning": "The analysis shows a high probability of meeting success (0.7), moderate relationship potential, and a 60% chance of follow-up. The time slot aligns with both individuals' energy levels and availability, and their shared neutral mood and technical focus suggest a productive and balanced meeting. The recommendation is supported by sufficient quantitative data."
+}<|im_end|>
+Scenario 2_p3 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p3 (baseline, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.1s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.0s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.6s
+Yes, I am finished. 
+
+{
+  "recommendation": "NO",
+  "reasoning": "The analysis shows that while there are shared interests in strategic planning and personal projects, the differences in social engagement styles and the low follow-up potential indicate that the meeting may not be productive. The high energy levels of both individuals do not align well with their current focus and engagement, making the meeting less likely to result in meaningful interaction or collaboration."
+}<|im_end|>
+Scenario 1_p3 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 3_p3 (baseline, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.5s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.
+Person B: The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.
+Time: Day1 Afternoon
+SFT RESULT: {'reason': 'disconnection', 'probability': 0.23}
+==========================================
+
+Iteration 2: agent returned after 6.8s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 9.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.1s
+Yes, I am finished. 
+
+{
+  "recommendation": "NO",
+  "reasoning": "The prediction of meeting success is 23% probability, and the likelihood of productive follow-up interactions is 20%. Both indicators suggest a low chance of a successful meeting, and the relationship potential is low. Therefore, it is not recommended to proceed with the meeting."
+}<|im_end|>
+Scenario 3_p3 complete. GT=YES, Agent said=NO, Correct=False
+Scenario 0_p4 (baseline, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.1s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.0s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.1s
+s shows a moderate compatibility score, high energy levels, and potential for business discussions. The follow-up probability is 0.3, which suggests a reasonable chance of productive interaction. The shared interests in work efficiency and career development further support the meeting. The neutral mood and structured work habits align well with the VC Partner's senior role and the junior founder's early-stage career. The time slot is suitable for focused, task-oriented interactions."}<|im_end|>
+Scenario 0_p4 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p4 (baseline, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.1s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 15.2s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 13.0s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.8s
+{"recommendation": "YES", "reasoning": "The analysis shows that the time slot fits well for both individuals, they share common interests in technical challenges and learning, and there is a medium potential for productive discussion. The follow-up probability is 0.5, which suggests a reasonable chance of a productive interaction, making the meeting advisable."}<|im_end|>
+Scenario 2_p4 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p4 (baseline, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.0s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 16.5s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.8s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.7s
+ecommendation": "NO", "reasoning": "The analysis shows that both individuals are deeply focused on their respective tasks, with Person A avoiding social interactions and Person B prioritizing strategic work. Their neutral moods and lack of engagement in meetings indicate minimal potential for interaction or follow-up. The follow-up probability is low, and the relationship potential is low, suggesting that the meeting is not likely to result in meaningful interaction or collaboration."}<|im_end|>
+Scenario 1_p4 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 3_p4 (baseline, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.8s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 9.7s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.4s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.
+Person B: The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.
+Time: Day1 Afternoon
+SFT RESULT: {'reason': 'disconnection', 'probability': 0.23}
+==========================================
+
+Iteration 3: agent returned after 7.0s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 3.8s
+{"recommendation": "NO", "reasoning": "The prediction from the 'predict_meeting_success_tool' indicates a 'disconnection' with a probability of 0.23, suggesting that the meeting is unlikely to be successful. The low probability and the 'disconnection' status further support the decision to not proceed with the meeting."}<|im_end|>
+Scenario 3_p4 complete. GT=YES, Agent said=NO, Correct=False
+Scenario 0_p5 (baseline, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.2s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 15.4s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.0s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.1s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in work-related interests, a suitable time slot, and moderate follow-up potential. The shared focus on work efficiency and discipline, along with the opportunity for collaboration, supports the decision to meet. The potential for a productive interaction is reasonable, and the time slot is suitable for both individuals."}<|im_end|>
+Scenario 0_p5 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p5 (baseline, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.9s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 21.3s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is intensely focused, working on a complex technical problem with high energy, their introverted nature evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.
+Person B: The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.
+Time: Day2 Morning
+SFT RESULT: {'reason': 'collaboration', 'probability': 0.7}
+==========================================
+
+Iteration 2: agent returned after 8.5s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.1s
+{"recommendation": "YES", "reasoning": "The meeting is recommended based on the following factors: 1) The extract_common_interests_and_topics tool identified common interests in technical problem-solving and learning, 2) The assess_time_slot_fit_and_energy tool confirmed the time slot aligns well with both individuals' energy levels, and 3) The predict_meeting_success_tool predicted a 70% probability of success. These factors collectively support the decision to hold the meeting."}<|im_end|>
+Scenario 2_p5 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p5 (baseline, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.3s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 17.9s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.7s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.4s
+{"recommendation": "YES", "reasoning": "The analysis shows a moderate compatibility score for common interests, a suitable time slot, and a low follow-up potential. While the meeting may not lead to direct engagement, the strategic value of understanding their focus areas and projects is significant. The time slot is suitable, and the potential for future alignment is low, making the meeting worthwhile for information exchange and strategic insight."}<|im_end|>
+Scenario 1_p5 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p5 (baseline, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.5s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.3s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.1s
+{"recommendation": "YES", "reasoning": "The meeting was suitable based on shared interests in engineering and technical challenges, and the time slot was appropriate for both individuals. While follow-up potential is low, the meeting provided valuable insights and laid a foundation for potential future interactions. The casual nature of the meeting and lack of clear business purpose do not significantly hinder its value."}<|im_end|>
+Scenario 3_p5 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p6 (baseline, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.2s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.7s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.8s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.6s
+{"recommendation": "YES", "reasoning": "The analysis shows a high compatibility score (0.75), fit score (0.8), and moderate follow-up potential (0.6). The shared professional goals, similar work habits, and the Day3 Evening time slot suggest a highly efficient meeting. The business potential is medium, which indicates a good opportunity for productive discussion. All factors point to a recommended meeting."}<|im_end|>
+Scenario 0_p6 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p6 (baseline, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.5s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 15.7s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.8s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.1s
+{"recommendation": "YES", "reasoning": "The analysis shows a high compatibility score for common interests, a fit time slot with high energy levels, and potential for business collaboration. The follow-up probability is 60%, indicating a reasonable chance of productive interaction. The moderate relationship potential suggests a good opportunity for engagement, and the suggested next steps support the decision to proceed."}<|im_end|>
+Scenario 2_p6 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p6 (baseline, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.8s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 15.2s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.9s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.3s
+{"recommendation": "YES", "reasoning": "The analysis shows a moderate compatibility score for common interests, a suitable time slot for both individuals, and a low follow-up potential. The meeting is likely to be productive and beneficial for both parties, given their respective focus areas and neutral moods. The time slot is also suitable for both individuals, with high energy levels and appropriate focus."}<|im_end|>
+Scenario 1_p6 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p6 (baseline, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.6s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 9.8s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.7s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.0s
+{"recommendation": "YES", "reasoning": "The meeting aligns with both individuals' introverted nature and independent work preferences, with a moderate compatibility score and a low relationship potential. The time slot is suitable for focused work, and there is a medium business potential for structured collaboration. The follow-up probability is moderate, but the meeting provides a foundation for further professional engagement."}<|im_end|>
+Scenario 3_p6 complete. GT=YES, Agent said=YES, Correct=True
+
+Running Full Local Evaluation for TRAINED Model
+
+Loading evaluation base model ONCE: Qwen/Qwen3-1.7B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.89s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.51s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.72s/it]
+Loading and merging DPO adapter ONCE: ./qwen3-dpo-adapter-v1
+Scenario 0_p0 (trained, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.1s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 15.3s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.7s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 6.6s
+ compatibility. The time slot is well-suited for both individuals, with their energy levels and focus being high. The red flag of lack of social interaction is present, but it does not significantly hinder the meeting's productivity. The follow-up potential is moderate, but the business potential is medium, suggesting that there is a chance for productive discussions. Overall, the meeting is likely to be productive and beneficial for both individuals, despite the potential red flag."
+}<|im_end|>
+Scenario 0_p0 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p0 (trained, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.5s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.2s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 12.0s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.6s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in technical interests, moderate differences in work styles, and a 70% probability of productive follow-up. The time slot is suitable for both individuals, and there is potential for professional collaboration. All factors point to a positive outcome for the meeting."}<|im_end|>
+Scenario 2_p0 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p0 (trained, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.6s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.6s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.7s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.7s
+ "reasoning": "The meeting is suitable due to shared interests in entrepreneurship and strategic planning, moderate compatibility score, and a time slot that aligns with both individuals' energy levels. The follow-up potential is low, but the meeting can still be productive for focused discussion on business strategies and innovation. The introverted nature of Person A and balanced social approach of Person B allow for deep, focused conversations without excessive social interaction."}<|im_end|>
+Scenario 1_p0 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p0 (trained, Pax)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.8s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.9s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.0s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.0s
+{"recommendation": "YES", "reasoning": "The meeting is well-suited given the shared interests in technology and quiet environments, the high energy levels and introverted tendencies aligning with the time slot, and the potential for professional collaboration. While follow-up probability is low, the meeting offers a productive environment for technical discussion and could lead to future collaboration opportunities."}<|im_end|>
+Scenario 3_p0 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p1 (trained, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.3s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 19.8s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.2s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.2s
+{"recommendation": "NO", "reasoning": "The analysis shows that the meeting has a 20% chance of leading to a follow-up, but the relationship potential and business potential are both low. The time slot is suitable, but the lack of shared interests and social engagement suggests that the meeting is unlikely to be productive. Therefore, it is not recommended to proceed with the meeting."}<|im_end|>
+Scenario 0_p1 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 2_p1 (trained, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.1s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 18.3s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 12.5s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.8s
+ focus on productivity, and moderate business potential for collaboration. The senior engineer's complex problem and junior engineer's early-morning focus create a potential for professional interaction, though not a deep personal connection. The follow-up probability is 0.6, which is above 0.5, indicating a reasonable chance of productive interaction. The time slot is compatible with both individuals' energy levels, and there are no red flags. Therefore, the meeting is recommended."
+}<|im_end|>
+Scenario 2_p1 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p1 (trained, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.7s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.5s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.1s
+recommendation": "YES", "reasoning": "The analysis shows a moderate compatibility score (0.75) for common interests, a fit score of 0.6 for the time slot, and a 30% follow-up probability. While there are some red flags, the strategic alignment and potential for business interaction suggest that the meeting is worth pursuing. The low relationship potential does not negate the possibility of productive collaboration, especially given the senior founder's focus on strategic initiatives."}<|im_end|>
+Scenario 1_p1 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p1 (trained, Vigil)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 7.6s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.0s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 8.9s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.3s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in technical interests, shared work habits, and a suitable time slot. While follow-up potential is low, the meeting is productive and aligns with both individuals' work styles. The meeting is recommended with confidence."}<|im_end|>
+Scenario 3_p1 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p2 (trained, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.9s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The VC Partner is highly energetic, focused, and efficiently managing their time with minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.
+Person B: The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.
+Time: Day3 Evening
+SFT RESULT: {'reason': 'underperformance', 'probability': 0.23}
+==========================================
+
+Iteration 2: agent returned after 7.9s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.2s
+</think>
+
+{"recommendation": "NO", "reasoning": "The prediction tool indicates a probability of 0.23 for underperformance, which is below the 0.50 threshold for recommending a meeting. Therefore, it is not advisable to proceed with the meeting."}<|im_end|>
+Scenario 0_p2 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 2_p2 (trained, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 12.1s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 17.8s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is intensely focused, working on a complex technical problem with high energy, their introverted nature evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.
+Person B: The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.
+Time: Day2 Morning
+SFT RESULT: {'reason': 'collaboration', 'probability': 0.7}
+==========================================
+
+Iteration 2: agent returned after 8.5s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.1s
+{"recommendation": "YES", "reasoning": "The prediction tool indicates a 70% probability of a successful meeting, with the reason being 'collaboration'. The analysis of common interests and time slot compatibility also supports the meeting, making it a favorable decision."}<|im_end|>
+Scenario 2_p2 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p2 (trained, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 12.8s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The attendee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.
+Person B: The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.
+Time: Day3 Afternoon
+SFT RESULT: {'reason': 'productivity', 'probability': 0.72}
+==========================================
+
+Iteration 2: agent returned after 7.1s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 9.9s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 3.6s
+{
+  "recommendation": "YES",
+  "reasoning": "The meeting has a 72% probability of being productive, with moderate compatibility and a low potential for follow-up. The time slot is somewhat suitable, and the suggested next steps include alternative interactions. The overall scenario supports a meeting."
+}<|im_end|>
+Scenario 1_p2 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p2 (trained, Aura)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.2s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.2s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.
+Person B: The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.
+Time: Day1 Afternoon
+SFT RESULT: {'reason': 'disconnection', 'probability': 0.23}
+==========================================
+
+Iteration 2: agent returned after 6.8s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 10.3s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.9s
+{"recommendation": "YES", "reasoning": "The analysis shows a moderate compatibility score (0.75), a fit score of 0.9 for the time slot, and a 30% chance of follow-up potential. While the meeting may not be highly productive, the shared interests and potential for collaboration suggest a reasonable opportunity for interaction. The low relationship potential does not negate the possibility of a productive follow-up, making the meeting a viable option."}<|im_end|>
+Scenario 3_p2 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p3 (trained, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.3s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.5s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.8s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.7s
+Yes, I am finished. 
+
+{
+  "recommendation": "YES",
+  "reasoning": "The analysis shows a moderate compatibility score, suitable time slot, and potential for brief professional exchange. The follow-up probability is 0.3, which is reasonable, and the relationship potential is low but business potential is medium. The time slot is suitable for both individuals, and there are no significant red flags. Therefore, the meeting should proceed."
+}<|im_end|>
+Scenario 0_p3 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p3 (trained, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.8s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 13.9s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 12.3s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.1s
+ JSON recommendation based on the gathered information.
+
+{
+  "recommendation": "YES",
+  "reasoning": "The analysis shows that both individuals are in a high energy state, have shared technical interests, and the time slot aligns with their working preferences. The follow-up potential is moderate, but the shared neutral mood and available time create a foundation for structured communication. The compatibility score and energy levels suggest a moderate but viable meeting opportunity."
+}<|im_end|>
+Scenario 2_p3 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p3 (trained, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.7s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.7s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The attendee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.
+Person B: The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.
+Time: Day3 Afternoon
+SFT RESULT: {'reason': 'productivity', 'probability': 0.72}
+==========================================
+
+Iteration 2: agent returned after 7.2s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 10.2s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 4.3s
+{"recommendation": "YES", "reasoning": "The analysis shows a compatibility score of 0.75, high energy levels for both, and a 0.72 probability of productivity. While follow-up potential is low, the meeting is still beneficial for mutual professional growth and alignment. The time slot is suitable, and the results indicate a positive outcome for the meeting."}<|im_end|>
+Scenario 1_p3 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p3 (trained, Cortex)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.2s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.7s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.2s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.6s
+analysis shows that both individuals have shared interests in technical challenges and project management, and they are energized and fit in the Day1 Afternoon time slot. While the follow-up potential is moderate, the relationship potential is low, and there is a medium business potential. The shared introverted nature and independent work habits suggest a suitable meeting environment, and the time slot is well-fitted for their energy levels. The overall scenario supports a meeting."
+}<|im_end|>
+Scenario 3_p3 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 0_p4 (trained, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.3s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 15.2s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.3s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.1s
+{"recommendation": "YES", "reasoning": "The analysis shows a high compatibility score for common interests, a fit for the time slot, and moderate follow-up potential. The shared focus on work efficiency and discipline, along with the alignment of energy levels, supports the meeting. The moderate relationship potential suggests it could be beneficial, and the suggested next steps indicate a plan for continued engagement."}<|im_end|>
+Scenario 0_p4 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p4 (trained, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.5s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 16.4s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 12.6s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.5s
+{"recommendation": "YES", "reasoning": "All tools indicate a high likelihood of productive collaboration, with compatibility in technical interests, aligned energy levels, and potential for follow-up discussions. The senior engineer's expertise and the junior's enthusiasm create a balanced dynamic, making the meeting beneficial for both parties."}<|im_end|>
+Scenario 2_p4 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p4 (trained, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.9s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.5s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.3s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.5s
+{"recommendation": "NO", "reasoning": "The analysis shows that both individuals have low follow-up potential, low relationship potential, and low business potential. The meeting is not likely to lead to productive outcomes, and both parties are focused on their individual priorities. Therefore, it is not recommended to proceed with the meeting."}<|im_end|>
+Scenario 1_p4 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 3_p4 (trained, Echo)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.7s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 12.9s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 9.8s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 5.1s
+analysis shows that both individuals are introverted, focused, and working independently, with minimal social interaction. The compatibility score is 0.7, and the follow-up probability is low. The time slot is suitable for their energy levels, but the introverted nature may limit social interaction. The relationship potential and business potential are low, suggesting limited interest in further meetings or collaborations. Therefore, it is not recommended to proceed with the meeting."}<|im_end|>
+Scenario 3_p4 complete. GT=YES, Agent said=NO, Correct=False
+Scenario 0_p5 (trained, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 10.4s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 16.7s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.2s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.9s
+sis shows that the meeting is highly compatible in terms of professional goals and values, with a good fit in terms of energy levels and time slot. While there is a low probability of follow-up, the strategic value of the meeting lies in aligning their professional trajectories and fostering potential for future collaboration. The high compatibility score and shared interests in work-life balance and career development make the meeting a valuable opportunity for growth and alignment."}<|im_end|>
+Scenario 0_p5 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p5 (trained, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 12.1s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 16.6s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 12.7s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.5s
+{"recommendation": "YES", "reasoning": "The analysis shows a moderate compatibility score (0.7), high energy levels for both participants, and a 60% likelihood of productive follow-up interactions. The shared interest in technical problem-solving and the potential for collaboration, despite individual preferences, strongly supports the meeting. The time slot is suitable, and the business context enhances the value of the meeting."}<|im_end|>
+Scenario 2_p5 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p5 (trained, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.8s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 12.8s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The attendee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.
+Person B: The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.
+Time: Day3 Afternoon
+SFT RESULT: {'reason': 'productivity', 'probability': 0.72}
+==========================================
+
+Iteration 2: agent returned after 7.0s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 9.6s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 5.1s
+e meeting has been evaluated using multiple tools, and the overall probability of a productive meeting is 0.72, indicating a high likelihood of success. While there are some red flags regarding energy levels and social engagement, the core interests and strategic alignment suggest that the meeting could still yield valuable outcomes. The follow-up potential is low, but the initial meeting may still provide useful insights. Therefore, the recommendation is to proceed with the meeting."}<|im_end|>
+Scenario 1_p5 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 3_p5 (trained, Maven)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.4s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 12.8s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+
+========== ACTUAL SFT TOOL CALL ==========
+Person A: The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.
+Person B: The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.
+Time: Day1 Afternoon
+SFT RESULT: {'reason': 'disconnection', 'probability': 0.23}
+==========================================
+
+Iteration 2: agent returned after 6.9s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 10.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 4: calling agent...
+Iteration 4: agent returned after 3.6s
+{"recommendation": "NO", "reasoning": "The meeting is unlikely to be successful due to the low relationship potential and the disconnection observed. While there is a slight chance of follow-up, the overall potential for meaningful interaction is low, and the time slot does not align well with both participants' energy levels and preferences."}<|im_end|>
+Scenario 3_p5 complete. GT=YES, Agent said=NO, Correct=False
+Scenario 0_p6 (trained, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.9s
+th minimal social interaction, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.0s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 11.2s
+, leveraging their senior experience to navigate day-three evening responsibilities without the distraction of meetings. Their neutral mood reflects a balanced, disciplined approach to their work.", "person_b_desc": "The junior founder is intensely focused, driven by high energy, working on their own projects, and maintaining a neutral mood without engaging in social activities, reflecting their early-stage career and lack of meetings today.", "time_slot": "Day3 Evening"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.9s
+{"recommendation": "YES", "reasoning": "The analysis shows a high compatibility score (0.85), suitable time slot (fit score 0.8), and a moderate follow-up probability (0.3). The shared professional goals and similar work approaches indicate a potential for productive interaction. While the follow-up probability is moderate, the compatibility and time fit are strong, making the meeting highly efficient for both parties."}<|im_end|>
+Scenario 0_p6 complete. GT=NO, Agent said=YES, Correct=False
+Scenario 2_p6 (trained, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 11.7s
+ evident in quiet, solitary concentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 14.5s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 12.4s
+oncentration, and they’re in a state of neutral mood, likely immersed in a deep, productive task.", "person_b_desc": "The junior engineer is highly energized, focusing intently on their work, preferring to work alone or with a few close colleagues, demonstrating a commitment to learning and applying their skills. They are in a neutral mood, with no scheduled meetings, and are currently in the early morning hours, ready to tackle their tasks.", "time_slot": "Day2 Morning"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.1s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in technical interests, aligned time slot, and moderate follow-up potential. The senior engineer's focus and the junior's energy create a balanced dynamic, and the neutral mood and availability suggest a productive meeting. The predicted follow-up probability is 0.6, indicating a reasonable chance for further collaboration."}<|im_end|>
+Scenario 2_p6 complete. GT=YES, Agent said=YES, Correct=True
+Scenario 1_p6 (trained, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 9.6s
+endee is a junior founder with high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 12.6s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.5s
+high energy but introverted, sitting quietly in a corner, focused on a personal project, their neutral mood reflecting a lack of urgency as they avoid social interactions.", "person_b_desc": "The senior founder is fully immersed in deep focus, their high energy driving productive work on strategic initiatives, while maintaining a balanced approach to social interactions, reflecting a neutral mood and minimal engagement in today's meetings.", "time_slot": "Day3 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 3.7s
+{"recommendation": "NO", "reasoning": "The analysis shows that the time slot is too quiet for Person A, and there is low potential for meaningful interaction or collaboration. Additionally, the follow-up probability is low, and the relationship potential is low. Therefore, it is not efficient to schedule a meeting under these conditions."}<|im_end|>
+Scenario 1_p6 complete. GT=NO, Agent said=NO, Correct=True
+Scenario 3_p6 (trained, Nexus)
+
+Iteration 0: calling agent...
+Iteration 0: agent returned after 8.8s
+ments": {"person_a_desc": "The senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction."}}
+</tool_call><|im_end|>
+
+Iteration 1: calling agent...
+Iteration 1: agent returned after 10.2s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 2: calling agent...
+Iteration 2: agent returned after 10.1s
+senior engineer is visibly energized, immersed in focused work, with a quiet intensity as they process tasks independently, their introverted nature evident in minimal social engagement.", "person_b_desc": "The junior engineer is visibly energetic, focused on their tasks, with a quiet intensity, likely working independently in a solitary environment, their introverted nature evident in their subdued demeanor and lack of social interaction.", "time_slot": "Day1 Afternoon"}}
+</tool_call><|im_end|>
+
+Iteration 3: calling agent...
+Iteration 3: agent returned after 4.9s
+{"recommendation": "YES", "reasoning": "The analysis shows high compatibility in technical interests and work dynamics (compatibility score 0.75), a well-suited time slot (fit score 0.9), and moderate follow-up potential (30% chance). The shared focus on independent work and technical challenges suggests a productive meeting, despite low relationship potential. The meeting is efficient for both parties, as it aligns with their energy levels and work habits."}<|im_end|>
+Scenario 3_p6 complete. GT=YES, Agent said=YES, Correct=True
+
+Baseline metrics: {'accuracy': 57.14285714285714, 'balanced_accuracy': 57.14285714285714, 'yes_recall': 85.71428571428571, 'no_recall': 28.57142857142857, 'f1_yes': 0.6666666666666665, 'confusion_matrix': {'TP': 12, 'TN': 4, 'FP': 10, 'FN': 2, 'FAIL_YES': 0, 'FAIL_NO': 0}}
+Trained metrics: {'accuracy': 57.14285714285714, 'balanced_accuracy': 57.14285714285714, 'yes_recall': 85.71428571428571, 'no_recall': 28.57142857142857, 'f1_yes': 0.6666666666666665, 'confusion_matrix': {'TP': 12, 'TN': 4, 'FP': 10, 'FN': 2, 'FAIL_YES': 0, 'FAIL_NO': 0}}
+Accuracy improvement (percentage points): 0.0
